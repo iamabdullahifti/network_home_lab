@@ -1,0 +1,157 @@
+
+Current configuration : 2173 bytes
+!
+version 12.2(37)SE1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname MSW2
+!
+!
+!
+!
+!
+!
+ip routing
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ switchport mode dynamic desirable
+!
+interface FastEthernet0/2
+ switchport mode dynamic desirable
+!
+interface FastEthernet0/3
+ switchport mode dynamic desirable
+!
+interface FastEthernet0/4
+ switchport mode dynamic desirable
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+ no switchport
+ ip address 10.10.10.5 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ mac-address 0030.a36d.1501
+ ip address 192.168.10.2 255.255.255.0
+ standby 10 preempt
+ standby 0 ip 192.168.10.100
+!
+interface Vlan20
+ mac-address 0030.a36d.1502
+ ip address 192.168.20.2 255.255.255.0
+ standby 10 preempt
+ standby 0 ip 192.168.20.100
+!
+interface Vlan30
+ mac-address 0030.a36d.1503
+ ip address 192.168.30.2 255.255.255.0
+ standby 10 preempt
+ standby 0 ip 192.168.30.100
+!
+interface Vlan40
+ mac-address 0030.a36d.1504
+ ip address 192.168.40.2 255.255.255.0
+ standby 10 preempt
+ standby 0 ip 192.168.40.100
+!
+router ospf 1
+ log-adjacency-changes
+ network 10.10.10.5 0.0.0.0 area 0
+ network 192.168.10.0 0.0.0.255 area 0
+ network 192.168.20.0 0.0.0.255 area 0
+ network 192.168.30.0 0.0.0.255 area 0
+ network 192.168.40.0 0.0.0.255 area 0
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 10.10.10.6 
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+!
+end
