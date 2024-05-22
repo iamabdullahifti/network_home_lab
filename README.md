@@ -14,8 +14,7 @@ This repository contains the configuration and documentation for a network home 
 - Access Point: 1 x Wireless Access Point
 
 ## Network Topology
-![network_topology](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/0a63fe3a-bf3f-4b65-9bfb-63758f65a87b)
-
+![network_topology](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/c80760e1-641a-4624-a9f6-cc06f0544983)
 
 The network is divided into five segments:
 
@@ -27,6 +26,13 @@ The network is divided into five segments:
   
 ## Logical Topology
 ![logical_topology](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/7202c9bf-a6d9-4796-b7b2-32b72b5f4f9d)
+
+## End Point Configuration
+- End Points PC's were configured with static ip address according to the subnet assigned for the particular segment.
+- Default-Gateway was assigned later on
+- Endpoints were placed in their respective vlans by SW1,2,3,5's access ports
+
+![1 (7)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/7ec321e3-de39-4147-ba78-b6c14e41fff6)
 
 
 ## Multilayer Switch SVI Configuration
@@ -44,6 +50,9 @@ Switch Virtual Interfaces for every vlan were assigned on Multi-Layer Switch MSW
   - VLAN 30: 192.168.30.2
   - VLAN 40: 192.168.40.2
 
+![1 (1)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/85516856-f51c-4e4e-812d-8810b6748189)
+
+
 ## VLAN Gateways
 The default gateways,which are virtual, were to assigned to each vlan.
 
@@ -52,12 +61,15 @@ The default gateways,which are virtual, were to assigned to each vlan.
 - VLAN 30: 192.168.30.100
 - VLAN 40: 192.168.40.100
 
+![1 (2)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/2a9a4261-caf0-483d-b212-1c4ed0f973b9)
 
 ## HSRP Configuration
 HSRP was configured so that one multi layer switch is active. 
 - HSRP Standby:
   - DSW1 Active: VLAN 10
   - DSW2 Active: VLAN 20, VLAN 30, VLAN 40
+
+![1 (3)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/f10ccb9d-85fa-4a14-b249-3bda001044bd)
 
 ## Network Connections
 
@@ -75,10 +87,18 @@ HSRP was configured so that one multi layer switch is active.
   - OSPF was configured on MSW1 and MSW2 on the network IDs of the VLANs and on G0/1 interface, which connects to the router.
   - OSPF was configured on all the interfaces on R1.
 
+![1 (4)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/2113db5c-befd-4c66-8749-269b3196bc92)
+
 ## DNS and Web Server Configuration
 
-- DNS Server: Configured on the internal VLAN (192.168.40.0/24) - 192.168.40.13
 - Web Server: Configured on the internal VLAN (192.168.40.0/24) - 192.168.40.12
+
+![1 (5)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/83e64ed7-6010-4ad9-954a-b43d365260b5)
+
+- DNS Server: Configured on the internal VLAN (192.168.40.0/24) - 192.168.40.13
+  
+![1 (6)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/6bd2b82e-5ed6-44de-8902-7a50b1f8d8dd)
+
 
 ## Wireless Network Configuration
 
