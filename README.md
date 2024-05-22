@@ -97,15 +97,16 @@ HSRP was configured so that one multi layer switch is active.
 ## DNS and Web Server Configuration
 
 - Web Server: Configured on the internal VLAN (192.168.40.0/24) - 192.168.40.12
-
-
+#
+#
 ![1 (5)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/83e64ed7-6010-4ad9-954a-b43d365260b5)
-
-
+#
+#
 - DNS Server: Configured on the internal VLAN (192.168.40.0/24) - 192.168.40.13
-
-  
+#
+#  
 ![1 (6)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/6bd2b82e-5ed6-44de-8902-7a50b1f8d8dd)
+
 
 
 
