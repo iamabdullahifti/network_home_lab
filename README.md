@@ -26,7 +26,7 @@ The network is divided into five segments:
 - Wireless Segment: 192.168.50.0/24 (no VLAN)
   
 ## Logical Topology
-![logical_topology](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/4c117701-47dd-4fda-a764-4466b26eb9c4)
+![logical_topology](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/7202c9bf-a6d9-4796-b7b2-32b72b5f4f9d)
 
 ## VLAN Assignments and IP Ranges
 
