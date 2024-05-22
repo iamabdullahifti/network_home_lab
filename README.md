@@ -1,7 +1,7 @@
 # Network Home Lab
 
 This repository contains the configuration and documentation for a network home lab setup. The lab is designed to simulate a small enterprise network with various departments and services. The documentation covers the hardware components, network topology, VLAN configurations, and other essential network settings.
-
+#
 ## Hardware Components
 
 - Router: 1 x Cisco 2911 (R1)
@@ -12,7 +12,7 @@ This repository contains the configuration and documentation for a network home 
   - 1 x DHCP Server
   - 1 x DNS Server
 - Access Point: 1 x Wireless Access Point
-
+#
 ## Network Topology
 
 ![network_topology](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/c80760e1-641a-4624-a9f6-cc06f0544983)
@@ -24,11 +24,11 @@ The network is divided into five segments:
 - Sales Department: VLAN 30 - 192.168.30.0/24
 - Internal Segment: VLAN 40 - 192.168.40.0/24 (includes DNS server, Web server, and management)
 - Wireless Segment: 192.168.50.0/24 (no VLAN)
-  
+#  
 ## Logical Topology
 
 ![logical_topology](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/7202c9bf-a6d9-4796-b7b2-32b72b5f4f9d)
-
+#
 ## End Point Configuration
 - End Points PC's were configured with static ip address according to the subnet assigned for the particular segment.
 - Default-Gateway was assigned later on
@@ -36,7 +36,7 @@ The network is divided into five segments:
 
 ![1 (7)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/7ec321e3-de39-4147-ba78-b6c14e41fff6)
 
-
+#
 ## Multilayer Switch SVI Configuration
 Switch Virtual Interfaces for every vlan were assigned on Multi-Layer Switch MSW1 and MSW2. 
 
@@ -54,7 +54,7 @@ Switch Virtual Interfaces for every vlan were assigned on Multi-Layer Switch MSW
 
 ![1 (1)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/85516856-f51c-4e4e-812d-8810b6748189)
 
-
+#
 ## VLAN Gateways
 The default gateways,which are virtual, were to assigned to each vlan.
 
@@ -65,7 +65,7 @@ The default gateways,which are virtual, were to assigned to each vlan.
 
 ![1 (2)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/2a9a4261-caf0-483d-b212-1c4ed0f973b9)
 
-
+#
 ## HSRP Configuration
 HSRP was configured so that one multi layer switch is active. 
 - HSRP Standby:
@@ -75,7 +75,7 @@ HSRP was configured so that one multi layer switch is active.
 
 ![1 (3)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/f10ccb9d-85fa-4a14-b249-3bda001044bd)
 
-
+#
 ## Network Connections
 
 - Each department VLAN (IT, HR, Sales, Management) connects to a layer 2 switch.
@@ -84,7 +84,7 @@ HSRP was configured so that one multi layer switch is active.
 - The wireless segment connects to an access point (AP).
 - Both the AP and the DHCP server connect to a switch which then connects to the router.
 - The wireless segment is kept separate from the other networks and uses the 192.168.50.0/24 subnet.
-
+#
 ## Default Static Routes and OSPF Configuration
 
 - Default Static Route: Default route is configured to R1 on MSW1 and MSW2.
@@ -93,20 +93,19 @@ HSRP was configured so that one multi layer switch is active.
   - OSPF was configured on all the interfaces on R1.
 
 ![1 (4)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/2113db5c-befd-4c66-8749-269b3196bc92)
-
+#
 ## DNS and Web Server Configuration
 
 - Web Server: Configured on the internal VLAN (192.168.40.0/24) - 192.168.40.12
-#
-#
+
 ![1 (5)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/83e64ed7-6010-4ad9-954a-b43d365260b5)
 #
-#
-- DNS Server: Configured on the internal VLAN (192.168.40.0/24) - 192.168.40.13
-#
-#  
-![1 (6)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/6bd2b82e-5ed6-44de-8902-7a50b1f8d8dd)
 
+- DNS Server: Configured on the internal VLAN (192.168.40.0/24) - 192.168.40.13
+
+
+![1 (6)](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/6bd2b82e-5ed6-44de-8902-7a50b1f8d8dd)
+#
 
 
 
@@ -115,7 +114,7 @@ HSRP was configured so that one multi layer switch is active.
 - DHCP Server: Configured DHCP Server to provide IP addresses for the wireless segment (192.168.50.0/24).
 - Access Point (AP): Connected to a switch which then connects to the router.
 - Wireless clients connect to the AP and obtain IP addresses via DHCP.
-
+#
 ## Usage
 
 This lab setup can be used to simulate a small enterprise network environment. It is useful for learning and testing purposes related to network configuration, VLAN management, routing protocols, and network services such as DNS and DHCP.
