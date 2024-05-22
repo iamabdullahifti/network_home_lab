@@ -28,29 +28,24 @@ The network is divided into five segments:
 ## Logical Topology
 ![logical_topology](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/7202c9bf-a6d9-4796-b7b2-32b72b5f4f9d)
 
-## VLAN Assignments and IP Ranges
-
-- IT Department: VLAN 10 - 192.168.10.0/24
-- HR Department: VLAN 20 - 192.168.20.0/24
-- Sales Department: VLAN 30 - 192.168.30.0/24
-- Internal Segment: VLAN 40 - 192.168.40.0/24
-- Wireless Segment: 192.168.50.0/24 (no VLAN)
 
 ## Multilayer Switch SVI Configuration
+Switch Virtual Interfaces for every vlan were assigned on Multi-Layer Switch MSW1 and MSW2. 
 
-- Multilayer SW 1 SVI:
+- Multilayer MSW 1 SVI:
   - VLAN 10: 192.168.10.1
   - VLAN 20: 192.168.20.1
   - VLAN 30: 192.168.30.1
   - VLAN 40: 192.168.40.1
 
-- Multilayer SW 2 SVI:
+- Multilayer MSW2 SVI:
   - VLAN 10: 192.168.10.2
   - VLAN 20: 192.168.20.2
   - VLAN 30: 192.168.30.2
   - VLAN 40: 192.168.40.2
 
 ## VLAN Gateways
+The default gateways,which are virtual, were to assigned to each vlan.
 
 - VLAN 10: 192.168.10.100
 - VLAN 20: 192.168.20.100
@@ -59,7 +54,7 @@ The network is divided into five segments:
 
 
 ## HSRP Configuration
-
+HSRP was configured so that one multi layer switch is active. 
 - HSRP Standby:
   - DSW1 Active: VLAN 10
   - DSW2 Active: VLAN 20, VLAN 30, VLAN 40
@@ -82,12 +77,12 @@ The network is divided into five segments:
 
 ## DNS and Web Server Configuration
 
-- DNS Server: Configured on the internal VLAN (192.168.40.0/24).
-- Web Server: Configured on the internal VLAN (192.168.40.0/24).
+- DNS Server: Configured on the internal VLAN (192.168.40.0/24) - 192.168.40.13
+- Web Server: Configured on the internal VLAN (192.168.40.0/24) - 192.168.40.12
 
 ## Wireless Network Configuration
 
-- DHCP Server: Configured to provide IP addresses for the wireless segment (192.168.50.0/24).
+- DHCP Server: Configured DHCP Server to provide IP addresses for the wireless segment (192.168.50.0/24).
 - Access Point (AP): Connected to a switch which then connects to the router.
 - Wireless clients connect to the AP and obtain IP addresses via DHCP.
 
