@@ -14,7 +14,8 @@ This repository contains the configuration and documentation for a network home 
 - Access Point: 1 x Wireless Access Point
 
 ## Network Topology
-![network_topology](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/829003e4-736c-4f85-b108-722aac90074a)
+![network_topology](https://github.com/iamabdullahifti/network_home_lab/assets/129957445/0a63fe3a-bf3f-4b65-9bfb-63758f65a87b)
+
 
 The network is divided into five segments:
 
